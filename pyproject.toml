@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "twiffarchiver"
+version = "0.1.0"
+description = "Archive X (Twitter) following and follower lists to JSON"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "yanagi-lpc" }]
+dependencies = [
+  "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+browser = ["browser-cookie3>=0.19"]
+
+[project.scripts]
+twiffarchiver = "twiffarchiver.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
